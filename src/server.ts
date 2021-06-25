@@ -15,13 +15,14 @@ app.get("/", (req, res) => {
 });
 
 const httpServer = createServer(app);
+
 const PORT = 5200;
 
 httpServer.listen(
     {
         port: PORT,
     },
-    ()=> {
+    () => {
         console.log(`Servidor academia online list -> http://localhost:${PORT}`);
     }
 );
