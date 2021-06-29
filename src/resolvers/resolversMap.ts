@@ -7,4 +7,4 @@ const resolversMap: IResolvers = {
     ...type
 };
 
-export default resolversMap;
+export default resolversMap; 

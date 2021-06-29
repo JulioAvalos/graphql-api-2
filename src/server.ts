@@ -21,7 +21,7 @@ const servidor = new ApolloServer({
 servidor.applyMiddleware({app});
 app.get("/", expressPlayGround({
     endpoint: '/graphql'
-}));
+})); 
 
 const httpServer = createServer(app);
 
