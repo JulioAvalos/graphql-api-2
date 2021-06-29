@@ -32,6 +32,6 @@ httpServer.listen(
         port: PORT,
     },
     () => {
-        console.log(`Servidor academia online list -> http://localhost:${PORT}/graphql`);
+        console.log(`Servidor academia online list -> http://localhost:${PORT}`);
     }
 );
