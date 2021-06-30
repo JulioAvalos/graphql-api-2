@@ -5,6 +5,7 @@ import { database } from "../data/data.store";
 const mutation: IResolvers = {
   Mutation: {
     cursoNuevo(__: void, { curso }): any {
+
       const itemCurso = {
         id: String(database.cursos.length + 1),
         title: curso.title,
@@ -17,8 +18,24 @@ const mutation: IResolvers = {
         teacher: curso.teacher,
         reviews: [],
       };
-      database.cursos.push(itemCurso);
-      return itemCurso;
+
+      if(!database.cursos.find(item => item.title === itemCurso.title)) {
+        database.cursos.push(itemCurso);
+        return itemCurso;
+      }
+
+      return {
+        id: "-1",
+        title: `El curso ya existe con este titulo: ${itemCurso.title}`,
+        description: "",
+        clases: -1,
+        time: 0.0,
+        level: "TODOS",
+        logo: "",
+        path: "",
+        teacher: "",
+        reviews: [],
+      };
     },
   },
 };
